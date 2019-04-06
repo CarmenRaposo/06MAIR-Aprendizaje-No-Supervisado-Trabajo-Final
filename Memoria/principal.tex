@@ -1,0 +1,89 @@
+\documentclass[11pt,a4paper,oneside]{book}
+
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+%\usepackage{amsthm,multicol,stmaryrd,mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphics,curves,longtable}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{fancyhdr}
+
+
+
+% Para añadir códigos de MATLAB
+%\usepackage[numbered,breaklines=true]{mcode}
+%\lstset{aboveskip={0.5\baselineskip}}
+
+\usepackage{graphicx}
+\graphicspath{{figuras/}}
+
+% Para las referencias a figuras, ecuaciones, etc
+\usepackage[hidelinks]{hyperref}
+\usepackage[spanish]{cleveref}
+
+% Creamos las bloques de codigo
+
+\floatstyle{ruled}
+\newfloat{codigo}{thp}{lop}[chapter]
+\floatname{codigo}{Código}
+
+% Y los teoremas
+
+\newenvironment{solu}{\textbf{Soluci\'{o}n. }}{$\blacksquare$}
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{lem}{Lema}[chapter]
+%\newtheorem{lem}[teo]{Lema}
+\newtheorem{cor}{Corolario}[section]
+\newtheorem{prop}{Proposición}[section]
+\newtheorem{obs}{Observación}[section]
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definici\'{o}n}[chapter]
+\newtheorem{ejem}{Ejemplo}[chapter]
+\newtheorem{ejer}{Ejercicio}[chapter]
+\usepackage[a4paper]{geometry}
+
+
+\newcommand{\corr}[1]{ \textcolor{red}{#1}  }
+\newcommand{\fcorr}[1]{ \footnote{  \textcolor{red}{#1}  } }
+\newcommand{\tref}[1]{Tabla~\ref{#1}}
+
+\newcommand{\capi}[1]{\nonumber \chapter{\textbf{#1}} \addcontentsline{toc}{chapter}{\textbf{#1}}}
+
+
+\makeatletter
+\renewcommand{\@chapapp}{Apartado}
+\makeatother
+
+%\renewcommand{\chapter}[1]{ \textbf{#1} \addcontentsline{toc}{chapter}{\textbf{#1}} }
+
+\begin{document}
+
+\include{portada/portada}
+
+\pagenumbering{roman}
+
+\tableofcontents
+\pagestyle{plain}
+
+\pagenumbering{arabic}
+\setcounter{page}{0}
+
+%\capi{Hola mundo}
+
+
+
+\include{cap1/cap1}
+\include{cap2/cap2}
+\include{cap3/cap3}
+\include{cap4/cap4}
+
+
+%\appendix 
+
+%\include{apendice1/apendice1}
+\end{document}
+
